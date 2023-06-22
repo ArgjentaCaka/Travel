@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    background: #0a2a43;
+    min-height: 1500px;
+    overflow-x: hidden ;
+}
+
+/* Navbar CSS ---------------------------------------------------------------------------------------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: #fff;
+}
+
+.logo {
+  cursor: pointer;
+  padding: 22px 15px;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0a2a43;
+  font-family: Arial;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #0a2a43;
+  text-decoration: none;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: color 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #73b7eb;
+}
+
+.cta {
+  padding: 9px 25px;
+  background-color: #0a2a43;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-color: #73b7eb;
+}
+
+.overlay__content a{
+    color: #fff;
+}
+
+
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 12;
+  left: 0;
+  top: 0;
+  background-color: #0a2a43;
+  overflow-x: hidden;
+  transition: width 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #73b7eb;
+}
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+  .menu {
+    display: initial;
+  }
+}
+
+/**------------Header CSS------------------------------------------------------------------------------------------**/
+
+.headerSection {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerSection:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #0a2a43, transparent);
+    z-index: 10;
+}
+
+.headerSection:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /**background: #0a2a43;**/
+    z-index: 10;
+    mix-blend-mode: color;
+}
+
+.headerSection img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.headerSection img#moon {
+    height: auto;
+}
+
+#text {
+    position: relative;
+    color: #fff;
+    font-size: 10vw;
+    font-family: 'Poppins';
+    z-index: 1;
+}
+
+#road {
+    z-index: 2;
+}
+
+/** Our partners logo slider CSS--------------------------------------------------------------------------**/
+
+#partners {
+    padding-top: 25px;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+.logo-slider {
+    background: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0.562) 100%);
+    -webkit-box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.125);
+    box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.125);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.logo-slider::before,
+.logo-slider::after {
+    background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 175px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+.logo-slider::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+.logo-slider::before {
+    left: 0;
+    top: 0;
+}
+
+.logo-slider .logo-slide-track {
+    -webkit-animation: logo-scroll 60s linear infinite;
+    animation: logo-scroll 60s linear infinite;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(250px * 14);
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+.logo-slider .slide {
+    width: 250px;
+    padding: 15px;
+}
+
+@-webkit-keyframes logo-scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+@keyframes logo-scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+/**------------Shkrimet me background levizes CSS-----------------------------------------------------------------------**/
+
+.movingBackground
+{
+  box-sizing: border-box;
+  outline: none;
+}
+
+#sections
+{
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: 50px 0;
+  margin-bottom: -280px !important;
+}
+
+section .movingBackgroundContent 
+{
+  text-align: center;
+}
+
+section .movingBackgroundContent #sectionH2
+{
+  font-family: 'Poppins';
+  font-size: 10vw;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 1em;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-attachment: fixed;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+section:nth-child(1) .movingBackgroundContent #sectionH2
+{
+  background-image: url(bg1.jpg);
+}
+
+section:nth-child(2) .movingBackgroundContent #sectionH2
+{
+  background-image: url(bg2.jpg);
+}
+
+section:nth-child(3) .movingBackgroundContent #sectionH2
+{
+  background-image: url(bg3.jpg);
+}
+
+section:nth-child(4) .movingBackgroundContent #sectionH2
+{
+  background-image: url(bg4.jpg);
+}
+
+section .movingBackgroundContent #sectionP
+{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+}
+
+section .movingBackgroundContent .anchor-link a
+{
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  text-decoration: none; 
+  color: #fff;
+  margin-top: 20px;
+}
+/**------------Divider1 CSS-------------------------------------------------------------------------------------------------**/
+.divider1{
+    color: #000;
+    background: #fff;
+    padding: 20px;
+    margin-top: 5%;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+}
+.divider1 p{
+    font-size: 1rem;
+    text-align: center;
+}
+/**------------Swiper CSS--------------------------------------------------------------------------------------------------**/
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.card {
+    position: relative;
+    background: #fff;
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.card .content {
+    width: 400px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.card .content a {
+    display: inline-block;
+    margin: 10px 0 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #262626;
+    color: #262626;
+    font-weight: 600;
+}
+
+.card .content p {
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+.card .sliderText {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.card .sliderText h3 {
+    color: #fff;
+    font-size: 3em;
+}
+
+.swiper-slide {
+    width: 400px !important;
+}
+
+.swiper-slide:nth-child(1) .sliderText {
+    background: #2196f3;
+}
+
+.swiper-slide:nth-child(2) .sliderText {
+    background: #e91e63;
+}
+
+.swiper-slide:nth-child(3) .sliderText {
+    background: #c3d41a;
+}
+
+.swiper-slide:nth-child(4) .sliderText {
+    background: #c33ada;
+}
+
+.swiper-slide:nth-child(5) .sliderText {
+    background: #2196f3;
+}
+
+#textBGg {
+    font-size: 0.6em;
+    background: rgba(0, 0, 0, 0.50);
+    color: white;
+    position: relative;
+    padding: 1rem;
+}
+
+#Kosovo {
+    background-image: url(../img/238px-Flag_of_Kosovo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#Albania {
+    background-image: url(../img/125px-Flag_of_Albania.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#Montenegro {
+    background-image: url(../img/montenegro-flag.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#NorthMacedonia {
+    background-image: url(../img/Flag-North-Macedonia.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/**------------Divider2 CSS-------------------------------------------------------------------------------------------------**/
+.divider2{
+    color: #000;
+    background: #fff;
+    padding: 20px;
+    font-family: 'Poppins';
+    margin-bottom: 5%;
+    text-transform: uppercase;
+}
+.divider2 p{
+    font-size: 1rem  ;
+    text-align: center;
+}
+
+/**------------Stunning CSS--------------------------------------------------------------------------------------------------**/
+
+.stunning-text {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    background: #0a2a43;
+}
+
+#stunning {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    color: #fff;
+    /* color: #0e3e63; */
+    font-size: 5vw;
+    text-transform: uppercase;
+}
+
+h1 span {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    animation: animate 2.5s linear infinite;
+}
+
+h1 span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+h1 span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+h1 span:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+h1 span:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+h1 span:nth-child(5) {
+    animation-delay: 1s;
+}
+
+h1 span:nth-child(6) {
+    animation-delay: 1.25s;
+}
+
+h1 span:nth-child(7) {
+    animation-delay: 1.5s;
+}
+
+h1 span:nth-child(8) {
+    animation-delay: 1.75s;
+}
+
+h1 span:nth-child(9) {
+    animation-delay: 2s;
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        color: #fff;
+        filter: blur(2px);
+        text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff, 0 0 300px #00b3ff, 0 0 400px #00b3ff;
+    }
+    5%,
+    95% {
+        color: #fff;
+        /* color: #0e3e63; */
+        filter: blur(0px);
+        text-shadow: none;
+    }
+}
