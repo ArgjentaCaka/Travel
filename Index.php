@@ -18,6 +18,8 @@
         <link rel="stylesheet" type="text/css" href="css\btnstyle.css"> 
         <link rel="stylesheet" type="text/css" href="css\GalleryStyle.css"> 
         <link rel="stylesheet" type="text/css" href="css\FooterStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script>
     </head>
     <body>
 
